@@ -1,0 +1,13 @@
+<h1><%=@student.to_s + "'s activation page"%></h1>
+
+<%= form_for(@student) do |field| %>
+  <input type="hidden" name="student[first_name]" value = <%= @student.first_name %>>
+  <input type="hidden" name="student[last_name]" value = <%= @student.last_name %>>
+  <input type="hidden" name="student[active]" value=false />
+
+  <%= field.label(:active?)%>
+  <input type="checkbox" name="student[active]" value=true />
+
+  <%= field.submit %>
+<% end %>
+
